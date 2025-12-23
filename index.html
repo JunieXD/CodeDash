@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeDash | 代码练习</title>
+    <link rel="stylesheet" href="style.css?v=1">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;600&family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-warning">请使用电脑访问</div>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <h1>CodeDash</h1>
+            </div>
+
+            <div class="header-controls">
+                <nav class="top-nav">
+                    <button class="nav-btn active" data-mode="keywords" data-i18n="nav_keywords">关键词</button>
+                    <button class="nav-btn" data-mode="snippets" data-i18n="nav_snippets">代码片段</button>
+                    <button class="nav-btn" data-mode="full" data-i18n="nav_full">完整代码</button>
+                    <button class="nav-btn" data-mode="custom" data-i18n="nav_custom">自定义</button>
+                </nav>
+
+                <button id="lang-btn" class="nav-btn" style="margin-left: 10px;">EN</button>
+
+                <button id="theme-btn" class="theme-btn" title="Toggle Theme">
+                    <!-- Icon will be set by JS -->
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-label" data-i18n="stat_wpm">速度 (WPM)</span>
+                    <span class="stat-value" id="wpm">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label" data-i18n="stat_acc">准确率</span>
+                    <span class="stat-value" id="accuracy">100%</span>
+                </div>
+            </div>
+
+            <div class="code-container" id="code-display">
+                <div class="overlay-message" id="overlay" data-i18n="overlay_start">点击开始</div>
+            </div>
+
+            <div class="controls">
+                <div class="selector-group">
+                    <label for="font-size-slider" data-i18n="label_size">字体大小:</label>
+                    <input type="range" id="font-size-slider" min="1" max="3" step="0.1" value="1.5">
+
+                    <label for="language-select" data-i18n="label_lang">编程语言:</label>
+                    <select id="language-select">
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                        <option value="c">C</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="go">Go</option>
+                        <option value="sql">SQL</option>
+                    </select>
+                </div>
+                <button id="restart-btn" class="action-btn" data-i18n="btn_restart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 12C4 16.4183 7.58172 20 12 20C14.1504 20 16.103 19.1488 17.5604 17.75C17.9691 17.3577 17.986 16.7022 17.6087 16.2874C17.2458 15.8885 16.6358 15.8576 16.2343 16.2155C15.1189 17.2096 13.6334 17.8 12 17.8C8.79675 17.8 6.2 15.2032 6.2 12C6.2 8.79675 8.79675 6.2 12 6.2C13.6896 6.2 15.2093 6.92087 16.2797 8.08374L14.2 8.08374C13.6477 8.08374 13.2 8.53146 13.2 9.08374C13.2 9.63603 13.6477 10.0837 14.2 10.0837H18.2C18.7523 10.0837 19.2 9.63603 19.2 9.08374V5.08374C19.2 4.53146 18.7523 4.08374 18.2 4.08374C17.6477 4.08374 17.2 4.53146 17.2 5.08374L17.2 6.64361C15.8593 5.06833 13.9094 4 12 4C7.58172 4 4 7.58172 4 12Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span>重新开始</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p id="footer-text">Made by <a href="https://juniexd.cn/">JunieXD</a></p>
+        </footer>
+    </div>
+
+    <!-- Custom Code Modal -->
+    <div id="custom-code-modal" class="modal-overlay hidden-modal">
+        <div class="modal-content">
+            <h2 data-i18n="modal_title">粘贴代码</h2>
+            <textarea id="custom-input" data-i18n="placeholder_custom" placeholder="在此处粘贴代码..."></textarea>
+            <div class="modal-actions">
+                <button id="cancel-custom-btn" class="modal-btn secondary" data-i18n="btn_cancel">取消</button>
+                <button id="start-custom-btn" class="modal-btn primary" data-i18n="btn_start">开始练习</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js?v=8"></script>
+</body>
+
+</html>
