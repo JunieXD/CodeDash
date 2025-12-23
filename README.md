@@ -2,7 +2,7 @@
   <img src="favicon.svg" alt="CodeDash Logo" width="100" height="100" />
   <h1>CodeDash</h1>
   <p>
-    <strong>一个极简、美观且响应式的代码打字练习应用。</strong>
+    <strong>一个极简、美观的代码打字练习网页</strong>
   </p>
 
   [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -13,7 +13,7 @@
 
 ## 📖 简介
 
-**CodeDash** 是专为开发者设计的打字练习工具。与普通打字测试不同，它让你直接练习真实的编程语法、常用算法和逻辑代码。
+**CodeDash** 是专为开发者设计的打字练习工具。与普通打字练习不同，它让你直接练习真实的编程语法、常用算法和逻辑代码。
 
 界面设计现代简洁，支持 **暗黑模式** 和 **中英双语** 切换，让你在沉浸式环境中提升代码输入速度。
 
